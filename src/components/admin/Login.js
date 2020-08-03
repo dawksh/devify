@@ -8,29 +8,31 @@ export default class Login extends Component {
         this.state = {
             email: '',
             pass: '',
-            loggedIn: false
+            loggedIn: false,
         }
     }
 
     componentDidMount() {
-        localStorage.getItem("loggedIn") ? this.setState({ loggedIn: true }) : this.setState({ loggedIn: false })
+        localStorage.getItem("loggedIn") === "true" ? this.setState({ loggedIn: true }) : this.setState({ loggedIn: false });
     }
     render() {
 
         firebase.auth().onAuthStateChanged(async (user) => {
             if (user) {
                 var email = user.email;
-                console.log(email);
                 localStorage.setItem('loggedIn', true);
+                console.log(email);
             } else {
                 console.log("not logged in yet!");
                 localStorage.setItem('loggedIn', false);
+
             }
         });
 
         const logOut = async (e) => {
             e.preventDefault()
             firebase.auth().signOut();
+
             this.setState({ loggedIn: false })
         }
 

@@ -40,7 +40,7 @@ export default class Dash extends Component {
                 data = doc.data()
             });
             console.log(data);
-            await DB.collection("approvedPosts").add({ title: data.title, body: data.body, createdAt: data.createdAt });
+            await DB.collection("approvedPosts").add({ title: data.title, body: data.body, createdAt: data.createdAt, lang: data.lang });
             await DB.collection("unapprovedPosts").doc(id).delete();
             data = []
             console.log(data);

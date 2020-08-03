@@ -26,6 +26,7 @@ class Project extends Component {
                     <h3>{this.state.project.title}</h3>
                     <br />
                     <p>{this.state.project.body}</p>
+                    <p>{this.state.project.lang}</p>
                 </div>
                     : <>Loading...</>}
             </div>
