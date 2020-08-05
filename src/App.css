@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #FFFEFF;
 }
 
 .row{
@@ -31,11 +31,11 @@
 }
 
 .card {
-  border-radius: 20px 20px 20px 20px !important;
-  box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.75) !important;
+  border-radius: 10px 10px 10px 10px !important;
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75) !important;
 }
 .card-action{
-  border-radius: 0px 0px 20px 20px !important;
+  border-radius: 0px 0px 10px 10px !important;
 }
 
 .projectPage{
@@ -46,9 +46,34 @@
 }
 
 /* add page */
+
 .body-add {
-  height: 10vh !important;
-  width: 20vw !important;
+  height: 20vh !important;
+  width: 40vw !important;
+}
+
+.input-field label {
+  color: rgb(38, 112, 141);
+}
+
+/* Project page */
+
+.body{
+white-space: pre-wrap;
+}
+
+/* admin dashboard */
+
+.approve-btn, .reject-btn{
+  cursor: pointer;
+}
+
+.approve-btn:hover{
+  color: rgba(0, 255, 255, 0.534) !important;
+}
+
+.reject-btn:hover {
+  color: rgba(194, 66, 66, 0.747) !important;
 }
 
 /* Homepage */
@@ -57,7 +82,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   margin: 1rem 4rem;
   color: #140035;
 }

@@ -7,8 +7,7 @@ export default class AddPost extends Component {
         super(props)
         this.state = {
             title: '',
-            body: '',
-            lang: ''
+            body: ''
         }
     }
     render() {
@@ -24,10 +23,13 @@ export default class AddPost extends Component {
                 await db.collection('unapprovedPosts').add({
                     title: this.state.title,
                     body: this.state.body,
-                    lang: this.state.lang,
                     createdAt: timestamp
                 });
-                alert("Post has been submitted!", this.state.title);
+                this.setState({
+                    title: '',
+                    body: ''
+                })
+                alert("Post has been submitted!");
             }
         }
 
@@ -36,24 +38,16 @@ export default class AddPost extends Component {
                 <form>
                     <center>
                         <div className="input-field col s6">
-                            <input id="Title" type="text" className="validate" onChange={e => {
+                            <input id="Title" type="text" className="validate" value={this.state.title} onChange={e => {
                                 this.setState({ title: e.target.value })
                             }} />
                             <label htmlFor="Title">Title</label>
                         </div>
-                        <div className="input-field col s6">
-                            <input id="title" type="text" className="validate body-add" onChange={e => {
-                                this.setState({ body: e.target.value })
-                            }} />
-                            <label htmlFor="title">Body</label>
+                        <div className="input-field col s12">
+                            <textarea id="textarea1" className="materialize-textarea body-add" value={this.state.body} onChange={e => { this.setState({ body: e.target.value }) }}></textarea>
+                            <label htmlFor="textarea1">Body</label>
                         </div>
-                        <div className="input-field col s6">
-                            <input id="title" type="text" className="validate" onChange={e => {
-                                this.setState({ lang: e.target.value })
-                            }} />
-                            <label htmlFor="Language">Language</label>
-                        </div>
-                        <button className="btn waves-effect waves-light" type="submit" name="action" onClick={sumbitHandler}>Submit</button>
+                        <button className="btn waves-effect waves-light" name="action" onClick={sumbitHandler}>Submit</button>
                     </center>
                 </form>
             </div>

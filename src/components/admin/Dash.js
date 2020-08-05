@@ -40,7 +40,7 @@ export default class Dash extends Component {
                 data = doc.data()
             });
             console.log(data);
-            await DB.collection("approvedPosts").add({ title: data.title, body: data.body, createdAt: data.createdAt, lang: data.lang });
+            await DB.collection("approvedPosts").add({ title: data.title, body: data.body, createdAt: data.createdAt });
             await DB.collection("unapprovedPosts").doc(id).delete();
             data = []
             console.log(data);
@@ -61,8 +61,8 @@ export default class Dash extends Component {
                                         <p>{el.data.body}</p>
                                     </div>
                                     <div className="card-action">
-                                        <a onClick={approve} href="#" id={el.id}>Approve</a>
-                                        <a onClick={reject} id={el.id}>Reject</a>
+                                        <a className="approve-btn" onClick={approve} id={el.id}>Approve</a >
+                                        <a className="reject-btn" onClick={reject} id={el.id}>Reject</a >
                                     </div>
                                 </div>
                             </div>
