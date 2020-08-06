@@ -13,10 +13,10 @@ export default class ProjectListContainer extends Component {
                                     <div className="card blue-grey darken-1">
                                         <div className="card-content white-text">
                                             <span className="card-title">{el.data.title}</span>
-                                            <p>{el.data.body}</p>
+                                            <p>{el.data.desc}</p>
                                         </div>
                                         <div className="card-action">
-                                            <Link to={`/project/${el.id}`}> Link </Link>
+                                            <Link to={`/project/${el.id}`}>Check this out</Link>
                                         </div>
                                     </div>
                                 </div>

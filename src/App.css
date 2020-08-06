@@ -45,6 +45,35 @@
   align-items: center;
 }
 
+/* Project page */
+
+.projectContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #001335;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.body{
+  white-space: pre-wrap;
+  text-align: center;
+  width: 80vw;
+  margin-bottom: 2rem;
+}
+
+.separator{
+  width: 60%;
+  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+  border: 0; 
+  border-top: 1px solid rgba(0,0,0, .2)
+}
+
 /* add page */
 
 .body-add {
@@ -54,12 +83,6 @@
 
 .input-field label {
   color: rgb(38, 112, 141);
-}
-
-/* Project page */
-
-.body{
-white-space: pre-wrap;
 }
 
 /* admin dashboard */
@@ -88,7 +111,7 @@ white-space: pre-wrap;
 }
 .head{
   font-family: 'Rowdies', cursive;
-  text-shadow: -1px -1px 3px 
+  text-shadow: -0.5px -0.5px 3px 
 }
 
 .content{

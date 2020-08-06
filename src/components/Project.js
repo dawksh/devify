@@ -23,11 +23,12 @@ class Project extends Component {
     render() {
         return (
             <div>
-                {this.state.render ? <div>
-                    <h3>{this.state.project.title}</h3>
-                    <br />
-                    <p className="body">{this.state.project.body}</p>
-                </div>
+                {this.state.render ?
+                    <div className="projectContainer">
+                        <h3 className="title">{this.state.project.title}</h3>
+                        <hr className="separator" />
+                        <p className="body">{this.state.project.body}</p>
+                    </div>
                     : <Loader />}
             </div>
         )

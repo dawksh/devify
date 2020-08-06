@@ -16,8 +16,8 @@ function App() {
       <header className="App-header">
         <Router>
           <Switch>
-            <Route exact path="/addProject" component={AddPost} />
             <Route exact path="/" component={Home} />
+            <Route exact path="/addProject" component={AddPost} />
             <Route exact path="/projects" component={Projects} />
             <Route exact path="/admin" component={Login} />
             <Route exact path="/project/:id" component={Project} />
