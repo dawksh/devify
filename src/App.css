@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500&family=PT+Sans&family=Rowdies&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Baloo+Tamma+2&family=Hind+Siliguri:wght@400;500&family=PT+Sans&family=Rowdies&family=Libre+Baskerville&family=Oswald:wght@500&display=swap');
 
 *{
   margin: 0;
@@ -57,6 +57,7 @@
 
 .title {
   font-weight: 700;
+  font-family: 'Rowdies', cursive;
 }
 
 .body{
@@ -64,6 +65,7 @@
   text-align: center;
   width: 80vw;
   margin-bottom: 2rem;
+  font-family: 'Libre Baskerville', serif;
 }
 
 .separator{
@@ -72,6 +74,16 @@
   margin-bottom: 1rem;
   border: 0; 
   border-top: 1px solid rgba(0,0,0, .2)
+}
+
+/* Project List */
+
+.card-body{
+  font-family: 'Baloo Tamma 2', cursive;
+}
+
+.card-title{
+  font-family: 'Acme', sans-serif;
 }
 
 /* add page */

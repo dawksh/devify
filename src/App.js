@@ -9,11 +9,13 @@ import Login from './components/admin/Login';
 import Project from './components/Project';
 import Home from './components/Home';
 import NotFound from './components/404';
+import ProjectUnApproved from './components/admin/Project';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
@@ -21,6 +23,7 @@ function App() {
             <Route exact path="/projects" component={Projects} />
             <Route exact path="/admin" component={Login} />
             <Route exact path="/project/:id" component={Project} />
+            <Route exact path="/project/un/:id" component={ProjectUnApproved} />
             <Route component={NotFound} />
           </Switch>
         </Router>

@@ -63,6 +63,7 @@ export default class Dash extends Component {
                                     <div className="card-action">
                                         <a className="approve-btn" onClick={approve} id={el.id}>Approve</a >
                                         <a className="reject-btn" onClick={reject} id={el.id}>Reject</a >
+                                        <a href={`/project/un/` + el.id}>View</a >
                                     </div>
                                 </div>
                             </div>
