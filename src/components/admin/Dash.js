@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DB from '../../firebase/firebase';
+import Loader from '../Loader';
 
 export default class Dash extends Component {
     constructor(props) {
@@ -23,15 +24,16 @@ export default class Dash extends Component {
                             indice = i;
                         }
                     }
-                    arr.splice(i, 1);
+                    arr.splice(indice, 1);
                 }
             });
             this.setState({
                 projects: arr,
-                render: true
+                render: true,
             })
         })
     }
+
     render() {
         const approve = async (e) => {
             const id = e.target.id;
@@ -40,7 +42,7 @@ export default class Dash extends Component {
                 data = doc.data()
             });
             console.log(data);
-            await DB.collection("approvedPosts").add({ title: data.title, body: data.body, createdAt: data.createdAt, desc: data.desc });
+            await DB.collection("approvedPosts").add({ title: data.title, body: data.body, createdAt: data.createdAt, desc: data.desc, approvedBy: this.props.email });
             await DB.collection("unapprovedPosts").doc(id).delete();
             data = []
             console.log(data);
@@ -69,7 +71,7 @@ export default class Dash extends Component {
                             </div>
                         </div>
                     )
-                }) : <p>loading...</p>}
+                }) : <div><center><Loader /></center></div>}
             </div >
         )
     }

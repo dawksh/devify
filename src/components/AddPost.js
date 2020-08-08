@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import db from '../firebase/firebase';
 import firebase from "firebase";
+import Nav from "./Nav";
 
 export default class AddPost extends Component {
     constructor(props) {
@@ -40,6 +41,7 @@ export default class AddPost extends Component {
 
         return (
             <div>
+                <Nav />
                 <form>
                     <center>
                         <div className="input-field col s6">
@@ -61,7 +63,7 @@ export default class AddPost extends Component {
                         <button className="btn waves-effect waves-light" name="action" onClick={sumbitHandler}>Submit</button>
                     </center>
                 </form>
-            </div>
+            </div >
         )
     }
 }

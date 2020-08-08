@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import DB from '../firebase/firebase';
 import Loader from "./Loader";
-import ProjectListContainer from './containers/ProjectListContainer'
+import ProjectListContainer from './containers/ProjectListContainer';
+import Nav from "./Nav";
 
 export default class Projects extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ export default class Projects extends Component {
 
         return (
             <div className="projectPage">
-
+                <Nav />
                 {this.state.render ? <ProjectListContainer data={this.state.projArr} /> : <Loader />}
 
             </div >

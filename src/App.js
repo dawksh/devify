@@ -10,6 +10,7 @@ import Project from './components/Project';
 import Home from './components/Home';
 import NotFound from './components/404';
 import ProjectUnApproved from './components/admin/Project';
+import Nav from './components/Nav';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/nav" component={Nav} />
             <Route exact path="/addProject" component={AddPost} />
             <Route exact path="/projects" component={Projects} />
             <Route exact path="/admin" component={Login} />

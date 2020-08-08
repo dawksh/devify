@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from "react-router";
 import DB from '../../firebase/firebase';
 import Loader from '../Loader';
+import Nav from '../Nav';
 
 class ProjectUnApproved extends Component {
     constructor(props) {
@@ -23,6 +24,7 @@ class ProjectUnApproved extends Component {
     render() {
         return (
             <div>
+                <Nav />
                 {this.state.render ?
                     <div className="projectContainer">
                         <h3 className="title">{this.state.project.title}</h3>

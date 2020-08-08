@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import Dash from './Dash';
+import Nav from '../Nav'
 
 export default class Login extends Component {
     constructor(props) {
@@ -9,6 +10,7 @@ export default class Login extends Component {
             email: '',
             pass: '',
             loggedIn: false,
+            propsMail: ''
         }
     }
 
@@ -16,14 +18,14 @@ export default class Login extends Component {
         localStorage.getItem("loggedIn") === "true" ? this.setState({ loggedIn: true }) : this.setState({ loggedIn: false });
     }
     render() {
-
         firebase.auth().onAuthStateChanged(async (user) => {
             if (user) {
-                var email = user.email;
+                const email = user.email;
+                localStorage.setItem('email', email);
                 localStorage.setItem('loggedIn', true);
-                console.log(email);
+                console.log("User is logged in");
             } else {
-                console.log("not logged in yet!");
+                console.log("User isn't logged in");
                 localStorage.setItem('loggedIn', false);
 
             }
@@ -54,15 +56,27 @@ export default class Login extends Component {
 
         return (
             <div>
+
                 {
-                    this.state.loggedIn ? <div> <button className="btn waves-effect waves-light" type="submit" name="action" onClick={logOut}>Sign Out</button> <Dash /> </div> : <div>
-                        <input type="email" name="email" placeholder="email" onChange={(e) => {
-                            this.setState({ email: e.target.value })
-                        }} />
-                        <input type="password" name="pass" placeholder="password" onChange={(e) => {
-                            this.setState({ pass: e.target.value })
-                        }} />
-                        <button className="btn waves-effect waves-light" type="submit" name="action" onClick={signIn}>Sign In</button></div>
+                    this.state.loggedIn ?
+                        <div>
+                            <Nav />
+                            <center>
+                                <button className="btn waves-effect waves-light" type="submit" name="action" onClick={logOut}>Sign Out</button>
+                            </center>
+                            <Dash email={localStorage.getItem("email")} />
+                        </div> :
+                        <div>
+                            <input type="email" className="loginFormInput" name="email" placeholder="Email" onChange={(e) => {
+                                this.setState({ email: e.target.value })
+                            }} />
+                            <input type="password" className="loginFormInput" name="pass" placeholder="Password" onChange={(e) => {
+                                this.setState({ pass: e.target.value })
+                            }} />
+                            <center>
+                                <button className="btn waves-effect waves-light" type="submit" name="action" onClick={signIn}>Sign In</button>
+                            </center>
+                        </div>
                 }
             </div>
         )

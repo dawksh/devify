@@ -1,17 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Nav extends Component {
     render() {
         return (
             <div>
                 <nav>
-                    <div className="nav-wrapper">
-                        <ul id="nav-mobile" className="right hide-on-med-and-down">
-                            <li><a href="sass.html">Sass</a></li>
-                            <li><a href="badges.html">Components</a></li>
-                            <li><a href="collapsible.html">JavaScript</a></li>
-                        </ul>
-                    </div>
+                    <ul className="nav-links">
+                        <li><Link to="/">Homepage</Link></li>
+                        <li><Link to="/addProject">Add Project</Link></li>
+                        <li><Link to="/projects">Projects</Link></li>
+                    </ul>
                 </nav>
             </div>
         )

@@ -90,7 +90,7 @@
 
 .body-add {
   height: 20vh !important;
-  width: 40vw !important;
+  width: 90vw !important;
 }
 
 .input-field label {
@@ -109,6 +109,38 @@
 
 .reject-btn:hover {
   color: rgba(194, 66, 66, 0.747) !important;
+}
+
+.btn{
+  margin: 1rem 0 2rem 0;
+}
+
+/* Nav */
+
+nav{
+  width: 90vw;
+  background-color: #FFB001;
+  margin: 0 0 2.5rem 0;
+
+}
+
+.nav-links{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.nav-links li a {
+  font-family: 'Acme', sans-serif;
+  color: #001335 !important;
+  font-size: 1rem;
+}
+
+/* 404 */
+
+.error {
+  font-family: 'Rowdies', cursive;
+  color: #001335;  
 }
 
 /* Homepage */
@@ -144,4 +176,13 @@
   .row{
     width: 90vw;
   }
+  .body-add {
+    height: 35vh !important;
+    width: 80vw !important;
+  }
+  .loginFormInput {
+    margin: 1rem 1rem 1rem 1rem !important;
+    width: 90vw !important;
+  }
+
 }
