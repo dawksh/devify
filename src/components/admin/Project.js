@@ -30,8 +30,9 @@ class ProjectUnApproved extends Component {
                         <h3 className="title">{this.state.project.title}</h3>
                         <hr className="separator" />
                         <p className="body">{this.state.project.body}</p>
+                        <p>Sample Link: <a href={this.state.project.sampLink}>Click here</a></p>
                     </div>
-                    : <Loader />}
+                    : <center><Loader /></center>}
             </div>
         )
     }

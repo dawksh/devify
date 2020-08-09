@@ -42,7 +42,7 @@ export default class Dash extends Component {
                 data = doc.data()
             });
             console.log(data);
-            await DB.collection("approvedPosts").add({ title: data.title, body: data.body, createdAt: data.createdAt, desc: data.desc, approvedBy: this.props.email });
+            await DB.collection("approvedPosts").add({ title: data.title, body: data.body, createdAt: data.createdAt, desc: data.desc, approvedBy: this.props.email, sampLink: data.sampLink });
             await DB.collection("unapprovedPosts").doc(id).delete();
             data = []
             console.log(data);
@@ -52,7 +52,7 @@ export default class Dash extends Component {
             await DB.collection("unapprovedPosts").doc(id).delete();
         }
         return (
-            <div>
+            <div className="projectPage">
                 {this.state.render ? this.state.projects.map((el, index) => {
                     return (
                         <div className="row" key={index}>
@@ -60,7 +60,7 @@ export default class Dash extends Component {
                                 <div className="card blue-grey darken-1">
                                     <div className="card-content white-text">
                                         <span className="card-title">{el.data.title}</span>
-                                        <p>{el.data.body}</p>
+                                        <p>{el.data.desc}</p>
                                     </div>
                                     <div className="card-action">
                                         <a className="approve-btn" onClick={approve} id={el.id}>Approve</a >

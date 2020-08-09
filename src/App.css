@@ -43,6 +43,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2rem 0 0 0;
 }
 
 /* Project page */
@@ -178,7 +179,7 @@ nav{
   }
   .body-add {
     height: 35vh !important;
-    width: 80vw !important;
+    width: 90vw !important;
   }
   .loginFormInput {
     margin: 1rem 1rem 1rem 1rem !important;

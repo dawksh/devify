@@ -16,7 +16,7 @@ export default class ProjectListContainer extends Component {
                                             <p className="card-body">{el.data.desc}</p>
                                         </div>
                                         <div className="card-action">
-                                            <Link to={`/project/${el.id}`}>Check it out.</Link>
+                                            <Link to={`/project/${el.id}`}>Check it out</Link>
                                         </div>
                                     </div>
                                 </div>

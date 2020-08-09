@@ -9,7 +9,8 @@ export default class AddPost extends Component {
         this.state = {
             title: '',
             body: '',
-            desc: ''
+            desc: '',
+            sampLink: ''
         }
     }
     render() {
@@ -28,12 +29,14 @@ export default class AddPost extends Component {
                     title: this.state.title,
                     body: this.state.body,
                     desc: this.state.desc,
-                    createdAt: timestamp
+                    createdAt: timestamp,
+                    sampLink: this.state.sampLink
                 });
                 this.setState({
                     title: '',
                     body: '',
-                    desc: ''
+                    desc: '',
+                    sampLink: ''
                 })
                 alert("Post has been submitted!");
             }
@@ -59,6 +62,12 @@ export default class AddPost extends Component {
                         <div className="input-field col s12">
                             <textarea id="textarea1" className="materialize-textarea body-add" value={this.state.body} onChange={e => { this.setState({ body: e.target.value }) }}></textarea>
                             <label htmlFor="textarea1">Body</label>
+                        </div>
+                        <div className="input-field col s6">
+                            <input id="Title" type="url" value={this.state.sampLink} onChange={e => {
+                                this.setState({ sampLink: e.target.value })
+                            }} />
+                            <label htmlFor="Title">Sample Link (Remember to add http:// or https:// otherwise it'll not work)</label>
                         </div>
                         <button className="btn waves-effect waves-light" name="action" onClick={sumbitHandler}>Submit</button>
                     </center>
