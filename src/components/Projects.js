@@ -31,7 +31,6 @@ export default class Projects extends Component {
             <div className="projectPage">
                 <Nav />
                 {this.state.render ? <ProjectListContainer data={this.state.projArr} /> : <center><Loader /> </center>}
-
             </div >
         )
     }

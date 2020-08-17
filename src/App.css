@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Acme&family=Baloo+Tamma+2&family=Hind+Siliguri:wght@400;500&family=PT+Sans&family=Rowdies&family=Libre+Baskerville&family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Baloo+Tamma+2&family=Noto+Sans+TC&family=Hind+Siliguri:wght@400;500&family=PT+Sans&family=Rowdies&family=Libre+Baskerville&family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 *{
   margin: 0;
@@ -7,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #FFB001;
+  background: linear-gradient(to right, #ffb921, #FFB001); 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -74,7 +75,14 @@
   margin-bottom: 3rem;
   margin-bottom: 1rem;
   border: 0; 
-  border-top: 1px solid rgba(0,0,0, .2)
+  border-top: 1px solid rgba(0,0,0, .2);
+}
+
+.link {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 1rem;
+  font-style: italic;
+  margin: 0rem 0 2rem 0;
 }
 
 /* Project List */
@@ -87,11 +95,14 @@
   font-family: 'Acme', sans-serif;
 }
 
-
 /* add page */
 
 input[type="text"] + label, input[type="url"] + label {
   pointer-events: none;
+}
+
+.urlLabel{
+  width: 100% !important;
 }
 
 .body-add {
@@ -126,7 +137,7 @@ input[type="text"] + label, input[type="url"] + label {
 nav{
   width: 90vw;
   background-color: #FFB001;
-  margin: 0 0 2.5rem 0;
+  margin: 2rem 0 2.5rem 0;
 
 }
 
@@ -156,11 +167,11 @@ nav{
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin: 1rem 4rem;
+  margin: 2rem 3rem;
   color: #140035;
 }
 .head{
-  font-family: 'Rowdies', cursive;
+  font-family: 'Anton', sans-serif;
   text-shadow: -0.5px -0.5px 3px 
 }
 
@@ -190,5 +201,7 @@ nav{
     margin: 1rem 1rem 1rem 1rem !important;
     width: 90vw !important;
   }
-
+ .urlInput {
+   height: 5rem !important;
+ }
 }

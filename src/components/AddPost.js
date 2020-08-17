@@ -66,8 +66,8 @@ export default class AddPost extends Component {
                         <div className="input-field col s6">
                             <input type="url" onChange={e => {
                                 this.setState({ sampLink: e.target.value })
-                            }} />
-                            <label htmlFor="Sample Link">Sample Link (Remember to add http:// or https:// otherwise it'll not work)</label>
+                            }} className="urlInput" />
+                            <label className="urlLabel" htmlFor="Sample Link">Sample Link (Remember to add http:// or https:// otherwise it'll not work)</label>
                         </div>
                         <button className="btn waves-effect waves-light" name="action" onClick={sumbitHandler}>Submit</button>
                     </center>
