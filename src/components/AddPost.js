@@ -38,7 +38,7 @@ export default class AddPost extends Component {
                     desc: '',
                     sampLink: ''
                 })
-                alert("Post has been submitted!");
+                alert("Project has been submitted! It will be soon reviewed by the mods and added to the list.");
             }
         }
 
@@ -48,26 +48,26 @@ export default class AddPost extends Component {
                 <form>
                     <center>
                         <div className="input-field col s6">
-                            <input id="Title" type="text" className="validate" value={this.state.title} onChange={e => {
+                            <input id="Title" type="text" className="validate" onChange={e => {
                                 this.setState({ title: e.target.value })
                             }} />
                             <label htmlFor="Title">Title</label>
                         </div>
                         <div className="input-field col s6">
-                            <input id="Title" type="text" value={this.state.desc} onChange={e => {
+                            <input id="Title" type="text" onChange={e => {
                                 this.setState({ desc: e.target.value })
                             }} />
-                            <label htmlFor="Title">Short Description</label>
+                            <label htmlFor="Short Description">Short Description</label>
                         </div>
                         <div className="input-field col s12">
-                            <textarea id="textarea1" className="materialize-textarea body-add" value={this.state.body} onChange={e => { this.setState({ body: e.target.value }) }}></textarea>
-                            <label htmlFor="textarea1">Body</label>
+                            <textarea id="textarea1" className="materialize-textarea body-add" onChange={e => { this.setState({ body: e.target.value }) }}></textarea>
+                            <label htmlFor="Body">Body</label>
                         </div>
                         <div className="input-field col s6">
-                            <input id="Title" type="url" value={this.state.sampLink} onChange={e => {
+                            <input type="url" onChange={e => {
                                 this.setState({ sampLink: e.target.value })
                             }} />
-                            <label htmlFor="Title">Sample Link (Remember to add http:// or https:// otherwise it'll not work)</label>
+                            <label htmlFor="Sample Link">Sample Link (Remember to add http:// or https:// otherwise it'll not work)</label>
                         </div>
                         <button className="btn waves-effect waves-light" name="action" onClick={sumbitHandler}>Submit</button>
                     </center>

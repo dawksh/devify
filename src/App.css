@@ -87,7 +87,12 @@
   font-family: 'Acme', sans-serif;
 }
 
+
 /* add page */
+
+input[type="text"] + label, input[type="url"] + label {
+  pointer-events: none;
+}
 
 .body-add {
   height: 20vh !important;
